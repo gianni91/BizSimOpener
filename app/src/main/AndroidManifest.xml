@@ -36,6 +36,10 @@
             android:name=".Equity_Distribution_5"
             android:label="@string/title_activity_equity__distribution_5" >
         </activity>
+        <activity
+            android:name=".Turns_6"
+            android:label="@string/title_activity_turns_6" >
+        </activity>
     </application>
 
 </manifest>
