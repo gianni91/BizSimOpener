@@ -1,5 +1,7 @@
 package com.example.jjob2.bizsimopener;
 
+import android.content.Intent;
+import android.os.SystemClock;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -23,18 +25,23 @@ public class Equity_Distribution_5 extends ActionBarActivity {
     private int p2Num = 0;
     private int p3Num = 0;
 
+    public static int YOU_EQUITY = 100;
+    public static int P1_EQUITY = 0;
+    public static int P2_EQUITY = 0;
+    public static int P3_EQUITY = 0;
+
+    public String values;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_equity__distribution_5);
 
-        //testing
+        Intent intent = getIntent();
         View myView = findViewById(R.id.editText);
 
-//        EditText myET = (EditText)myView;
         numPartnersPlace = (EditText)myView;
         numPartnersPlace.setKeyListener(null);
-        //myET.setEnabled(false);
 
         // These are getting the text positions for each distribution input
         myView = findViewById(R.id.you_input);
@@ -54,56 +61,10 @@ public class Equity_Distribution_5 extends ActionBarActivity {
         p3NumPlace.setKeyListener(null);
 
         update();
-
-
-
-
-        // copied from online and edited
-        // http://www.mysamplecode.com/2012/06/android-edittext-text-change-listener.html
-        //EditText myTextBox = (EditText) findViewById(R.id.myTextBox);
-
-//        EditText p1Validate = (EditText) findViewById(R.id.p1_input);
-
-
-
-        //EditText p1Validate = (EditText) findViewById(R.id.p1_input);
-//        p1Validate.addTextChangedListener(new TextWatcher() {
-        p1NumPlace.addTextChangedListener(new TextWatcher() {
-
-
-            public void afterTextChanged(Editable s) {
-            }
-
-            public void beforeTextChanged(CharSequence s, int start,
-                                          int count, int after) {
-            }
-
-            public void onTextChanged(CharSequence s, int start,
-                                      int before, int count) {
-//                System.out.println("Testing 123 ");
-
-
-//                TextView myOutputBox = (TextView) findViewById(R.id.you_input);
-
-                if (p1NumPlace.getText().toString() != "") {
-                    p1Num = Integer.parseInt(p1NumPlace.getText().toString());
-                    System.out.println("the number is now " + p1Num);
-                    update();
-                }
-
-
-
-/*
-                TextView myOutputBox = (TextView) findViewById(R.id.myOutputBox);
-
-                myOutputBox.setText(s);
-                */
-            }
-        });
-
     }
 
     private void update() {
+        /*
         if ((youNum + p1Num + p2Num + p3Num) > 100) {
 
             if ((youNum + p1Num + p2Num) < 100)
@@ -134,10 +95,26 @@ public class Equity_Distribution_5 extends ActionBarActivity {
 
 
         }
+       */
+        youNum = Integer.parseInt(youNumPlace.getText().toString());
+        p1Num = Integer.parseInt(p1NumPlace.getText().toString());
+        p2Num = Integer.parseInt(p2NumPlace.getText().toString());
+        p3Num = Integer.parseInt(p3NumPlace.getText().toString());
+
+        YOU_EQUITY = youNum;
+        P1_EQUITY = p1Num;
+        P2_EQUITY = p2Num;
+        P3_EQUITY = p3Num;
+
+        System.out.println("youNum = " + youNum);
+        System.out.println("p1Num = " + p1Num);
+        System.out.println("p2Num = " + p2Num);
+        System.out.println("p3Num = " + p3Num);
+
     }
 
 
-    public void lessButtonHandler(View myView) {
+    public void lessPHandler(View myView) {
 
         int numPartners = Integer.parseInt(numPartnersPlace.getText().toString());
         if(numPartners > 0) {
@@ -145,10 +122,8 @@ public class Equity_Distribution_5 extends ActionBarActivity {
             String newNum = ((Integer) numPartners).toString();
             numPartnersPlace.setText(newNum);
         }
-        //System.out.println("testing the less button " + numPartnersPlace.getText() );
-
     }
-    public void moreButtonHandler(View myView) {
+    public void morePHandler(View myView) {
 
         int numPartners = Integer.parseInt(numPartnersPlace.getText().toString());
         if(numPartners < 3) {
@@ -156,15 +131,12 @@ public class Equity_Distribution_5 extends ActionBarActivity {
             String newNum = ((Integer) numPartners).toString();
             numPartnersPlace.setText(newNum);
         }
-        //System.out.println("testing the less button " + numPartnersPlace.getText() );
-
     }
 
     public void lessYouHandler(View myView)
     {
         lessButtonHandler(myView, youNumPlace);
     }
-
     public void moreYouHandler(View myView)
     {
         moreButtonHandler(myView, youNumPlace);
@@ -174,34 +146,77 @@ public class Equity_Distribution_5 extends ActionBarActivity {
     {
         lessButtonHandler(myView, p1NumPlace);
     }
-
     public void moreP1Handler(View myView)
     {
         moreButtonHandler(myView, p1NumPlace);
     }
 
+    public void lessP2Handler(View myView)
+    {
+        lessButtonHandler(myView, p2NumPlace);
+    }
+    public void moreP2Handler(View myView)
+    {
+        moreButtonHandler(myView, p2NumPlace);
+    }
+
+    public void lessP3Handler(View myView)
+    {
+        lessButtonHandler(myView, p3NumPlace);
+    }
+    public void moreP3Handler(View myView)
+    {
+        moreButtonHandler(myView, p3NumPlace);
+    }
 
     public void lessButtonHandler(View myView, EditText numPlace ) {
 
         int percent = Integer.parseInt(numPlace.getText().toString());
-        if(percent > 4) {
-            percent -= 5;
-            String newNum = ((Integer) percent).toString();
-            numPlace.setText(newNum);
-        }
+        if(percent > 5) {
+            if(percent > 95) {
+                percent -= 1;
+            } else
+                percent -= 5;
+        } else if (percent > 0) {
+            percent -= 1;
+        } else
+            return;
+        String newNum = ((Integer) percent).toString();
+        numPlace.setText(newNum);
+
         //System.out.println("testing the less button " + numPartnersPlace.getText() );
 
     }
+
     public void moreButtonHandler(View myView, EditText numPlace ) {
 
         int percent = Integer.parseInt(numPlace.getText().toString());
-        if(percent < 96) {
-            percent += 5;
-            String newNum = ((Integer) percent).toString();
-            numPlace.setText(newNum);
-        }
-        //System.out.println("testing the less button " + numPartnersPlace.getText() );
+        if(percent < 95) {
+            if(percent > 4) {
+                percent += 5;
 
+            } else
+                percent += 1;
+        } else if (percent < 100) {
+            percent += 1;
+        } else
+            return;
+        String newNum = ((Integer) percent).toString();
+        numPlace.setText(newNum);
+        //System.out.println("testing the less button " + numPartnersPlace.getText() );
+    }
+
+    public void finishButtonHandler(View myView) {
+        update();
+        if((youNum + p1Num + p2Num + p3Num) > 100)
+            System.out.println("greater than 100%") ;
+        else {
+            Intent myIntent = new Intent(this,Turns_6.class);
+
+            String yNum = ((Integer)youNum).toString();
+            myIntent.putExtra(Title_1.extra, yNum);
+            startActivity(myIntent);
+        }
     }
 
 

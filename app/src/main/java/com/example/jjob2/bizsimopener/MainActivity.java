@@ -22,11 +22,6 @@ public class MainActivity extends ActionBarActivity {
     public void shareButtonHandler(View myView) {
 
         Intent myIntent = new Intent(this,Title_1.class);
-
-        String dummy = "";
-
-        myIntent.putExtra(extra,dummy)  ;
-
         startActivity(myIntent);
     }
 

@@ -11,33 +11,42 @@ import android.view.View;
 public class Funding_Select_4 extends ActionBarActivity {
 
 
-    public final static String extra = "com.example.jjob2.scripture_reference.MESSAGE";
+//    public final static String extra = "com.example.jjob2.bizsimopener.FUNDING_TYPE";
+    public static String FUNDING_TYPE;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_funding__select_4);
-
-        Intent intent = getIntent();
-        String logoID = intent.getStringExtra(Logo_Select_3.extra);
-        int logo_id = Integer.parseInt(logoID);
-
-        System.out.println("the logo id number is " + logo_id);
-
     }
 
+
+    public void bootstrapHandler(View myView) {
+        FUNDING_TYPE = "Bootstrap";
+        nextActivity(myView);
+    }
+
+    public void savingsHandler(View myView) {
+        FUNDING_TYPE = "Savings";
+        nextActivity(myView);
+    }
+
+    public void loanHandler(View myView) {
+        FUNDING_TYPE = "Loan";
+        nextActivity(myView);
+    }
 
     public void nextButtonHandler(View myView) {
+        FUNDING_TYPE = "Private Equity";
+        nextActivity(myView);
+    }
 
+    public void nextActivity(View myView) {
         Intent myIntent = new Intent(this,Equity_Distribution_5.class);
-
-        String dummy = "4";
-        //  int logo_ID = 4;
-
-        myIntent.putExtra(extra, dummy)  ;
-
+        //        myIntent.putExtra(Title_1.extra, dummy)  ;
         startActivity(myIntent);
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

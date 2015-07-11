@@ -11,7 +11,8 @@ import android.widget.EditText;
 
 public class Business_Name_2 extends ActionBarActivity {
 
-    public final static String extra = "com.example.jjob2.bizsimopener.COMPANY_NAME";
+//    public final static String extra = "com.example.jjob2.bizsimopener.COMPANY_NAME";
+    public static String COMPANY_NAME;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,9 +25,10 @@ public class Business_Name_2 extends ActionBarActivity {
         Intent myIntent = new Intent(this, Logo_Select_3.class);
 
         EditText compName = (EditText) findViewById(R.id.company_name);
-        String sCompName = compName.getText().toString();
+        COMPANY_NAME = compName.getText().toString();
 
-        myIntent.putExtra(extra, sCompName);
+     //   myIntent.putExtra(extra, sCompName);
+
         startActivity(myIntent);
     }
 
