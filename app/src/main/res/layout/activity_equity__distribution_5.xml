@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:text="Less"
         android:id="@+id/button_less"
-        android:onClick="lessButtonHandler"
+        android:onClick="lessPHandler"
         android:layout_alignBottom="@+id/editText"
         android:layout_alignRight="@+id/textView6"
         android:layout_alignEnd="@+id/textView6"
@@ -61,7 +61,7 @@
         android:layout_alignBottom="@+id/editText"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:onClick="moreButtonHandler"/>
+        android:onClick="morePHandler"/>
 
     <EditText
         android:layout_width="wrap_content"
@@ -94,10 +94,9 @@
         android:text="Less"
         android:id="@+id/less_you"
         android:onClick="lessYouHandler"
-        android:layout_alignBaseline="@+id/textView8"
-        android:layout_alignBottom="@+id/textView8"
-        android:layout_alignLeft="@+id/button_less"
-        android:layout_alignStart="@+id/button_less" />
+        android:layout_alignTop="@+id/textView8"
+        android:layout_alignRight="@+id/finish_button"
+        android:layout_alignEnd="@+id/finish_button" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -105,12 +104,10 @@
         android:inputType="number"
         android:ems="3"
         android:id="@+id/you_input"
-        android:layout_alignBaseline="@+id/less_you"
-        android:layout_alignBottom="@+id/less_you"
-        android:layout_toRightOf="@+id/less_you"
-        android:layout_toLeftOf="@+id/button_more"
-        android:layout_toStartOf="@+id/button_more"
-        android:text="100" />
+        android:text="100"
+        android:layout_alignBottom="@+id/more_you"
+        android:layout_toLeftOf="@+id/more_you"
+        android:layout_toStartOf="@+id/more_you" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -119,10 +116,9 @@
         android:text="More"
         android:id="@+id/more_you"
         android:onClick="moreYouHandler"
-        android:layout_alignBaseline="@+id/you_input"
-        android:layout_alignBottom="@+id/you_input"
-        android:layout_toRightOf="@+id/you_input"
-        android:layout_toEndOf="@+id/you_input" />
+        android:layout_alignTop="@+id/less_you"
+        android:layout_alignLeft="@+id/more_p1"
+        android:layout_alignStart="@+id/more_p1" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -140,10 +136,9 @@
         android:id="@+id/p1_input"
         android:text="0"
         android:ems="3"
-        android:layout_centerVertical="true"
-        android:layout_toRightOf="@+id/less_p1"
-        android:layout_toLeftOf="@+id/more_p1"
-        android:layout_toStartOf="@+id/more_p1" />
+        android:layout_alignTop="@+id/less_p1"
+        android:layout_alignLeft="@+id/you_input"
+        android:layout_alignStart="@+id/you_input" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -171,12 +166,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/p2_input"
-        android:layout_marginTop="21dp"
-        android:layout_below="@+id/more_p1"
-        android:layout_toRightOf="@+id/less_p1"
-        android:layout_toLeftOf="@+id/more_p1"
-        android:layout_toStartOf="@+id/more_p1"
-        android:text="0" />
+        android:text="0"
+        android:layout_below="@+id/p1_input"
+        android:layout_alignLeft="@+id/p1_input"
+        android:layout_alignStart="@+id/p1_input"
+        android:layout_marginTop="18dp"
+        android:layout_alignRight="@+id/p1_input"
+        android:layout_alignEnd="@+id/p1_input" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -218,6 +214,7 @@
         android:layout_height="wrap_content"
         android:text="Less"
         android:id="@+id/less_p2"
+        android:onClick="lessP2Handler"
         android:layout_alignTop="@+id/p2_input"
         android:layout_alignLeft="@+id/less_p1"
         android:layout_alignStart="@+id/less_p1" />
@@ -228,9 +225,10 @@
         android:layout_height="wrap_content"
         android:text="More"
         android:id="@+id/more_p2"
-        android:layout_alignBottom="@+id/less_p2"
-        android:layout_toRightOf="@+id/p2_input"
-        android:layout_toEndOf="@+id/p2_input" />
+        android:onClick="moreP2Handler"
+        android:layout_alignTop="@+id/p2_input"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -238,6 +236,7 @@
         android:layout_height="wrap_content"
         android:text="Less"
         android:id="@+id/less_p3"
+        android:onClick="lessP3Handler"
         android:layout_alignTop="@+id/p3_input"
         android:layout_alignLeft="@+id/less_p2"
         android:layout_alignStart="@+id/less_p2" />
@@ -248,17 +247,63 @@
         android:layout_height="wrap_content"
         android:text="More"
         android:id="@+id/more_p3"
-        android:layout_alignBottom="@+id/less_p3"
-        android:layout_toRightOf="@+id/p3_input"
-        android:layout_toEndOf="@+id/p3_input" />
+        android:onClick="moreP3Handler"
+        android:layout_alignTop="@+id/p3_input"
+        android:layout_alignLeft="@+id/more_p2"
+        android:layout_alignStart="@+id/more_p2" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Finish"
         android:id="@+id/finish_button"
+        android:onClick="finishButtonHandler"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="%"
+        android:id="@+id/textView"
+        android:layout_alignBaseline="@+id/you_input"
+        android:layout_alignBottom="@+id/you_input"
+        android:layout_toRightOf="@+id/textView6"
+        android:layout_toEndOf="@+id/textView6" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="%"
+        android:id="@+id/textView2"
+        android:layout_alignBaseline="@+id/p1_input"
+        android:layout_alignBottom="@+id/p1_input"
+        android:layout_alignLeft="@+id/textView4"
+        android:layout_alignStart="@+id/textView4" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="%"
+        android:id="@+id/textView4"
+        android:layout_alignBaseline="@+id/p2_input"
+        android:layout_alignBottom="@+id/p2_input"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="%"
+        android:id="@+id/textView12"
+        android:layout_alignBaseline="@+id/more_p3"
+        android:layout_alignBottom="@+id/more_p3"
+        android:layout_alignLeft="@+id/textView4"
+        android:layout_alignStart="@+id/textView4" />
 
 
 </RelativeLayout>

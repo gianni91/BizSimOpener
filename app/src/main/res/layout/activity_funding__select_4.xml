@@ -19,7 +19,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Bootstrap"
-        android:id="@+id/button2"
+        android:id="@+id/button_bootstrap"
+        android:onClick="bootstrapHandler"
         android:layout_marginTop="86dp"
         android:layout_below="@+id/textView5"
         android:layout_centerHorizontal="true" />
@@ -28,24 +29,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="   Savings   "
-        android:id="@+id/button3"
-        android:layout_below="@+id/button2"
+        android:onClick="savingsHandler"
+        android:id="@+id/button_savings"
+        android:layout_below="@+id/button_bootstrap"
         android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="      Loan       "
-        android:id="@+id/button4"
-        android:layout_below="@+id/button3"
+        android:onClick="loanHandler"
+        android:id="@+id/button_loan"
+        android:layout_below="@+id/button_savings"
         android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Private Equity"
-        android:id="@+id/button5"
-        android:layout_below="@+id/button4"
+        android:id="@+id/button_private"
+        android:layout_below="@+id/button_loan"
         android:onClick="nextButtonHandler"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>
