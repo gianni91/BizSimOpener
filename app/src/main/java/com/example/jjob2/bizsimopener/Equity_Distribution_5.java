@@ -208,8 +208,8 @@ public class Equity_Distribution_5 extends ActionBarActivity {
 
     public void finishButtonHandler(View myView) {
         update();
-        if((youNum + p1Num + p2Num + p3Num) > 100)
-            System.out.println("greater than 100%") ;
+        if((youNum + p1Num + p2Num + p3Num) != 100)
+            System.out.println("The total distribution must be 100%") ;
         else {
             Intent myIntent = new Intent(this,Turns_6.class);
 

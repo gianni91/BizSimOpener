@@ -29,6 +29,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/image_1"
+        android:onClick="i1Handler"
         android:layout_marginTop="48dp"
         android:src="@mipmap/ic_launcher"
         android:layout_below="@+id/textView4"
@@ -38,7 +39,8 @@
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton2"
+        android:id="@+id/image_2"
+        android:onClick="i2Handler"
         android:src="@mipmap/ic_launcher"
         android:layout_alignTop="@+id/image_1"
         android:layout_toRightOf="@+id/image_1"
@@ -47,126 +49,140 @@
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton3"
+        android:id="@+id/image_3"
+        android:onClick="i3Handler"
         android:src="@mipmap/ic_launcher"
-        android:layout_alignTop="@+id/imageButton2"
-        android:layout_toRightOf="@+id/imageButton2"
-        android:layout_toEndOf="@+id/imageButton2" />
+        android:layout_alignTop="@+id/image_2"
+        android:layout_toRightOf="@+id/image_2"
+        android:layout_toEndOf="@+id/image_2" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton4"
+        android:id="@+id/image_5"
+        android:onClick="i5Handler"
         android:src="@mipmap/ic_launcher"
         android:layout_below="@+id/image_1"
-        android:layout_toLeftOf="@+id/imageButton5"
-        android:layout_toStartOf="@+id/imageButton5" />
+        android:layout_toLeftOf="@+id/image_6"
+        android:layout_toStartOf="@+id/image_6" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton5"
+        android:id="@+id/image_6"
+        android:onClick="i6Handler"
         android:src="@mipmap/ic_launcher"
-        android:layout_alignTop="@+id/imageButton4"
-        android:layout_alignLeft="@+id/imageButton2"
-        android:layout_alignStart="@+id/imageButton2" />
+        android:layout_alignTop="@+id/image_5"
+        android:layout_alignLeft="@+id/image_2"
+        android:layout_alignStart="@+id/image_2" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton6"
+        android:id="@+id/image_7"
+        android:onClick="i7Handler"
         android:src="@mipmap/ic_launcher"
-        android:layout_alignTop="@+id/imageButton5"
-        android:layout_alignLeft="@+id/imageButton3"
-        android:layout_alignStart="@+id/imageButton3" />
+        android:layout_alignTop="@+id/image_6"
+        android:layout_alignLeft="@+id/image_3"
+        android:layout_alignStart="@+id/image_3" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton7"
+        android:id="@+id/image_9"
+        android:onClick="i9Handler"
         android:src="@mipmap/ic_launcher"
-        android:layout_below="@+id/imageButton4"
-        android:layout_toLeftOf="@+id/imageButton8"
-        android:layout_toStartOf="@+id/imageButton8" />
+        android:layout_below="@+id/image_5"
+        android:layout_toLeftOf="@+id/image_10"
+        android:layout_toStartOf="@+id/image_10" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton8"
+        android:id="@+id/image_10"
+        android:onClick="i10Handler"
         android:src="@mipmap/ic_launcher"
-        android:layout_alignTop="@+id/imageButton7"
-        android:layout_alignLeft="@+id/imageButton5"
-        android:layout_alignStart="@+id/imageButton5" />
+        android:layout_alignTop="@+id/image_9"
+        android:layout_alignLeft="@+id/image_6"
+        android:layout_alignStart="@+id/image_6" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton9"
+        android:id="@+id/image_11"
+        android:onClick="i11Handler"
         android:src="@mipmap/ic_launcher"
-        android:layout_alignTop="@+id/imageButton8"
-        android:layout_alignLeft="@+id/imageButton6"
-        android:layout_alignStart="@+id/imageButton6" />
+        android:layout_alignTop="@+id/image_10"
+        android:layout_alignLeft="@+id/image_7"
+        android:layout_alignStart="@+id/image_7" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton10"
+        android:id="@+id/image_4"
+        android:onClick="i4Handler"
         android:src="@mipmap/ic_launcher"
-        android:layout_alignTop="@+id/imageButton3"
-        android:layout_toRightOf="@+id/imageButton3"
-        android:layout_toEndOf="@+id/imageButton3" />
+        android:layout_alignTop="@+id/image_3"
+        android:layout_toRightOf="@+id/image_3"
+        android:layout_toEndOf="@+id/image_3" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton11"
+        android:id="@+id/image_8"
+        android:onClick="i8Handler"
         android:src="@mipmap/ic_launcher"
-        android:layout_above="@+id/imageButton9"
-        android:layout_toRightOf="@+id/imageButton6"
-        android:layout_toEndOf="@+id/imageButton6" />
+        android:layout_above="@+id/image_11"
+        android:layout_toRightOf="@+id/image_7"
+        android:layout_toEndOf="@+id/image_7" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton12"
+        android:id="@+id/image_12"
+        android:onClick="i12Handler"
         android:src="@mipmap/ic_launcher"
-        android:layout_alignTop="@+id/imageButton9"
-        android:layout_toRightOf="@+id/imageButton9"
-        android:layout_toEndOf="@+id/imageButton9" />
+        android:layout_alignTop="@+id/image_11"
+        android:layout_toRightOf="@+id/image_11"
+        android:layout_toEndOf="@+id/image_11" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton13"
+        android:id="@+id/image_13"
+        android:onClick="i13Handler"
         android:src="@mipmap/ic_launcher"
-        android:layout_below="@+id/imageButton7"
-        android:layout_alignLeft="@+id/imageButton7"
-        android:layout_alignStart="@+id/imageButton7" />
+        android:layout_below="@+id/image_9"
+        android:layout_alignLeft="@+id/image_9"
+        android:layout_alignStart="@+id/image_9" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton14"
+        android:id="@+id/image_14"
+        android:onClick="i14Handler"
         android:src="@mipmap/ic_launcher"
-        android:layout_alignBottom="@+id/imageButton13"
-        android:layout_toRightOf="@+id/imageButton13"
-        android:layout_toEndOf="@+id/imageButton13" />
+        android:layout_alignBottom="@+id/image_13"
+        android:layout_toRightOf="@+id/image_13"
+        android:layout_toEndOf="@+id/image_13" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton15"
+        android:id="@+id/image_15"
+        android:onClick="i15Handler"
         android:src="@mipmap/ic_launcher"
-        android:layout_alignBottom="@+id/imageButton14"
-        android:layout_toRightOf="@+id/imageButton14"
-        android:layout_toEndOf="@+id/imageButton14" />
+        android:layout_alignBottom="@+id/image_14"
+        android:layout_toRightOf="@+id/image_14"
+        android:layout_toEndOf="@+id/image_14" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageButton16"
+        android:id="@+id/image_16"
+        android:onClick="i16Handler"
         android:src="@mipmap/ic_launcher"
-        android:layout_below="@+id/imageButton12"
-        android:layout_toRightOf="@+id/imageButton9"
-        android:layout_toEndOf="@+id/imageButton9" />
+        android:layout_below="@+id/image_12"
+        android:layout_toRightOf="@+id/image_11"
+        android:layout_toEndOf="@+id/image_11" />
 </RelativeLayout>
