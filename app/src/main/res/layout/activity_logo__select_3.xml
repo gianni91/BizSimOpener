@@ -31,7 +31,7 @@
         android:id="@+id/image_1"
         android:onClick="i1Handler"
         android:layout_marginTop="48dp"
-        android:src="@mipmap/ic_launcher"
+        android:src="@drawable/PeaceLogo"
         android:layout_below="@+id/textView4"
         android:layout_toLeftOf="@+id/textView4"
         android:layout_toStartOf="@+id/textView4" />
