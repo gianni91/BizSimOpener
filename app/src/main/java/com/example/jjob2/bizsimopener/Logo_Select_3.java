@@ -12,6 +12,8 @@ import android.widget.EditText;
 
 public class Logo_Select_3 extends ActionBarActivity {
 
+    // Testing with this comment
+
 //    public final static String extra = "com.example.jjob2.bizsimopener.LOGO_NUM";
     public static int LOGO_NUM;
 
